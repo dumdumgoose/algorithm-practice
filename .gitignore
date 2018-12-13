@@ -5,6 +5,9 @@
 *.so
 *.dylib
 
+# Idea files, which we don't really need to be in this repo
+.idea
+
 # Test binary, build with `go test -c`
 *.test
 

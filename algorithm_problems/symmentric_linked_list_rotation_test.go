@@ -1,8 +1,9 @@
 package algorithm_problems
 
 import (
-	"github.com/azraeljack/algorithm-practice/common"
 	"testing"
+
+	"github.com/azraeljack/algorithm-practice/common"
 )
 
 func TestRotateOddList(t *testing.T) {
@@ -27,17 +28,6 @@ func TestRotateEvenList(t *testing.T) {
 	}
 }
 
-func TestRotateSingleList(t *testing.T) {
-	list := []string{"A"}
-	expectedOutput := []string{"A"}
-	root := buildLinkedList(list)
-	RotateLinkedList(root)
-	result := iterateLinkedList(root)
-	if !isStringSliceEqual(expectedOutput, result) {
-		t.Errorf("result %v is different with expected %v", result, expectedOutput)
-	}
-}
-
 func TestRotateNilList(t *testing.T) {
 	var list []string
 	var expectedOutput []string
@@ -52,6 +42,17 @@ func TestRotateNilList(t *testing.T) {
 func TestRotateEmptyList(t *testing.T) {
 	list := []string{}
 	expectedOutput := []string{}
+	root := buildLinkedList(list)
+	RotateLinkedList(root)
+	result := iterateLinkedList(root)
+	if !isStringSliceEqual(expectedOutput, result) {
+		t.Errorf("result %v is different with expected %v", result, expectedOutput)
+	}
+}
+
+func TestRotateSingleList(t *testing.T) {
+	list := []string{"A"}
+	expectedOutput := []string{"A"}
 	root := buildLinkedList(list)
 	RotateLinkedList(root)
 	result := iterateLinkedList(root)
@@ -104,10 +105,7 @@ func buildLinkedList(data []string) *common.ForwardDirectionalNode {
 	if data == nil {
 		return nil
 	}
-	var (
-		root *common.ForwardDirectionalNode
-		temp *common.ForwardDirectionalNode
-	)
+	var root, temp *common.ForwardDirectionalNode
 	for index, word := range data {
 		if index == 0 {
 			temp = &common.ForwardDirectionalNode{Next: nil, Data: word}

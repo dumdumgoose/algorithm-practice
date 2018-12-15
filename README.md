@@ -1,7 +1,8 @@
 # Algorithm Practice
 [![Build Status](https://dev.azure.com/yanpeili/yanpeili/_apis/build/status/azraeljack.algorithm-practice?branchName=master)](https://dev.azure.com/yanpeili/yanpeili/_build/latest?definitionId=1?branchName=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/azraeljack/algorithm-practice)](https://goreportcard.com/report/github.com/azraeljack/algorithm-practice)
 
-Just a playground for testing algorithms and data structures, hopefully I can finish all of the following.
+Just a playground for testing algorithms and data structures. The code here may not be the best practice but hopefully I can finish all of the following.
 
 ## Data Structures
 
@@ -23,7 +24,7 @@ Just a playground for testing algorithms and data structures, hopefully I can fi
     - Radix Tree
     - Red Black Tree
     - Patricia Trie
-    - Bloom Bits filter (probably this shouldn't be here, but anyway)
+    - Bloom Bits Filter (probably this shouldn't be here, but anyway)
 
 ## Sorting Algorithms
 
@@ -32,12 +33,12 @@ Just a playground for testing algorithms and data structures, hopefully I can fi
     - Quick Sort
     - Bubble Sort
     - Bucket Sort
+    - Heap Sort
     
 - ### WIP:
 
     - Block Sort
     - Clover Sort
-    - Heap Sort
     - Binary Tree Sort
     - Merge Sort
     - Insertion Sort

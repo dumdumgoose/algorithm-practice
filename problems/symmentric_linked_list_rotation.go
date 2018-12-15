@@ -1,4 +1,4 @@
-package algorithm_problems
+package problems
 
 import "github.com/azraeljack/algorithm-practice/common"
 

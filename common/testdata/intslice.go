@@ -1,6 +1,9 @@
 package testdata
 
-import "errors"
+import (
+	"errors"
+	"math/rand"
+)
 
 var (
 	errNotFound = errors.New("not found")
@@ -8,15 +11,15 @@ var (
 
 var sliceMap = map[string][]int{
 	"nilSlice":            nil,
-	"emptySlice":          []int{},
-	"singleSlice":         []int{0},
-	"doubleSlice":         []int{5, 1},
-	"tripleSlice":         []int{9, 1, 2},
-	"equalSlice":          []int{1, 1, 1, 1, 1, 1, 1},
-	"sortedSlice":         []int{1, 2, 3, 4, 5, 6, 7},
-	"reverseSortedSlice":  []int{7, 6, 5, 4, 3, 2, 1},
-	"randomizedSlice":     []int{1, 5, 4, 9, 2, 3, 10},
-	"longRandomizedSlice": []int{9, 2, 3, 3, 5, 2, 1, 8, 4, 6, 1, 2, 3, 88, 1, 1, 9, 8, 6, 51, 6, 581, 6, 8, 65, 16, 65, 6, 5, 1, 2, 5},
+	"emptySlice":          {},
+	"singleSlice":         {0},
+	"doubleSlice":         generateRandomIntSlice(2, 10000),
+	"tripleSlice":         generateRandomIntSlice(3, 10000),
+	"equalSlice":          {1, 1, 1, 1, 1, 1, 1},
+	"sortedSlice":         {1, 2, 3, 4, 5, 6, 7},
+	"reverseSortedSlice":  {7, 6, 5, 4, 3, 2, 1},
+	"randomizedSlice":     generateRandomIntSlice(7, 10000),
+	"longRandomizedSlice": generateRandomIntSlice(100000, 10000000),
 }
 
 func GetSliceCopy(name string) ([]int, error) {
@@ -30,4 +33,12 @@ func GetSliceCopy(name string) ([]int, error) {
 	buf := make([]int, len(toBeCopied))
 	copy(buf, toBeCopied)
 	return buf, nil
+}
+
+func generateRandomIntSlice(size, max int) []int {
+	slice := make([]int, size)
+	for i := 0; i < size; i++ {
+		slice[i] = rand.Intn(max)
+	}
+	return slice
 }

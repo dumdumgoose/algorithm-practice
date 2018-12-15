@@ -1,4 +1,4 @@
-package data_structures
+package structures
 
 import (
 	"errors"
@@ -29,7 +29,7 @@ const (
 
 type Heap struct {
 	data        []int
-	capacity    int
+	capacity    int                 // 0 means infinite
 	compareFunc func(a, b int) bool // if a has greater priority than b then return true else false
 }
 
@@ -41,8 +41,8 @@ func less(a, b int) bool {
 	return a < b
 }
 
-func NewHeap(data []int, heapType HeapType) (*Heap, error) {
-	heap := &Heap{}
+func NewHeap(data []int, heapType HeapType, capacity int) (*Heap, error) {
+	heap := &Heap{capacity: capacity}
 
 	if heapType == MinHeap {
 		heap.compareFunc = less
@@ -63,7 +63,7 @@ func NewHeap(data []int, heapType HeapType) (*Heap, error) {
 }
 
 func (h *Heap) Insert(data int) error {
-	if h.Size() >= h.capacity {
+	if h.capacity != 0 && h.Size() >= h.capacity {
 		return errHeapFull
 	}
 	h.data = append(h.data, data)
@@ -109,15 +109,16 @@ func (h *Heap) isEmpty() bool {
 
 func (h *Heap) percolateDown(node int) {
 	size := len(h.data)
+	parent := node
 	child := node*2 + 1
 	for child < size {
-		if child+1 < size && h.data[child+1] < h.data[child] {
+		if child+1 < size && h.compareFunc(h.data[child+1], h.data[child]) {
 			child++
 		}
-		if h.data[node] > h.data[child] {
-			h.swap(node, child)
-			node = child
-			child = node*2 + 1
+		if h.compareFunc(h.data[parent], h.data[child]) {
+			h.swap(parent, child)
+			parent = child
+			child = parent*2 + 1
 		} else {
 			break
 		}
@@ -125,13 +126,14 @@ func (h *Heap) percolateDown(node int) {
 }
 
 func (h *Heap) percolateUp(node int) {
+	child := node
 	for {
-		parent := (node - 1) / 2
-		if parent == node || h.data[node] >= h.data[parent] {
+		parent := (child - 1) / 2
+		if parent < 0 || parent == child || h.compareFunc(h.data[child], h.data[parent]) {
 			break
 		}
-		h.swap(parent, node)
-		node = parent
+		h.swap(parent, child)
+		child = parent
 	}
 }
 

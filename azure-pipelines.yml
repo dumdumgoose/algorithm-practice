@@ -37,6 +37,6 @@ steps:
   displayName: 'Get dependencies, then build'
   
 - script: |
-  go test -v ./...
+    go test -v ./...
   workingDirectory: '$(modulePath)'
   displayName: 'Run tests'

@@ -4,7 +4,7 @@ import "github.com/azraeljack/algorithm-practice/common"
 
 func HeapSort(data []int) {
 	size := len(data)
-	for i := size/2 - 1; i >= 0; i-- {
+	for i := (size - 1) / 2; i >= 0; i-- {
 		maxHeapify(data, i, size-1)
 	}
 	for i := size - 1; i > 0; i-- {

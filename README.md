@@ -23,7 +23,6 @@ Just a playground for testing algorithms and data structures. The code here may 
     - Linked List
     - Radix Tree
     - Red Black Tree
-    - Patricia Trie
     - Bloom Bits Filter (probably this shouldn't be here, but anyway)
 
 ## Sorting Algorithms

@@ -11,6 +11,7 @@ Just a playground for testing algorithms and data structures. The code here may 
     - Stack (not tested)
     - Non-Blocking Queue (not tested)
     - Heap (not tested)
+    - LRU (not tested)
 
 - ### WIP:
 
@@ -31,11 +32,12 @@ Just a playground for testing algorithms and data structures. The code here may 
     
     - Quick Sort
     - Bubble Sort
-    - Bucket Sort
+    - Count Sort
     - Heap Sort
     
 - ### WIP:
-
+    
+    - Bucket Sort
     - Block Sort
     - Clover Sort
     - Binary Tree Sort

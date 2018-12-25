@@ -2,7 +2,7 @@ package sort
 
 import "math"
 
-func BucketSort(data []int) {
+func CountSort(data []int) {
 	if data == nil || len(data) == 0 {
 		return
 	}

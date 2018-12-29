@@ -8,14 +8,15 @@ Just a playground for testing algorithms and data structures. The code here may 
 
 - ### Implemented:
     
+    - Heap
     - Stack (not tested)
     - Non-Blocking Queue (not tested)
-    - Heap (not tested)
     - LRU (not tested)
 
 - ### WIP:
 
     - Binary Search Tree
+    - Skip List
     - Concurrent Map
     - Hash Map
     - Directed Acyclic Graph

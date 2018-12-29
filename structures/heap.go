@@ -45,9 +45,9 @@ func NewHeap(data []int, heapType HeapType, capacity int) (*Heap, error) {
 	heap := &Heap{capacity: capacity}
 
 	if heapType == MinHeap {
-		heap.compareFunc = less
-	} else if heapType == MaxHeap {
 		heap.compareFunc = greater
+	} else if heapType == MaxHeap {
+		heap.compareFunc = less
 	} else {
 		return nil, errNotImplemented
 	}
@@ -112,7 +112,7 @@ func (h *Heap) percolateDown(node int) {
 	parent := node
 	child := node*2 + 1
 	for child < size {
-		if child+1 < size && h.compareFunc(h.data[child+1], h.data[child]) {
+		if child+1 < size && h.compareFunc(h.data[child], h.data[child+1]) {
 			child++
 		}
 		if h.compareFunc(h.data[parent], h.data[child]) {

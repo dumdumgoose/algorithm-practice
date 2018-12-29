@@ -45,6 +45,6 @@ Just a playground for testing algorithms and data structures. The code here may 
     - Merge Sort
     - Insertion Sort
 
-## Algorithm Problems (will be mainly leetcode stuffs and interview problems)
+## Algorithm Problems (will be mainly Leetcode stuffs and interview problems)
 
 - Will create the contents later

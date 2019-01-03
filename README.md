@@ -36,6 +36,7 @@ Just a playground for testing algorithms and data structures. The code here may 
     - Count Sort
     - Heap Sort
     - Merge Sort
+    - Insertion Sort
     
 - ### WIP:
     
@@ -43,7 +44,6 @@ Just a playground for testing algorithms and data structures. The code here may 
     - Block Sort
     - Clover Sort
     - Binary Tree Sort
-    - Insertion Sort
 
 ## Algorithm Problems (will be mainly Leetcode stuffs and interview problems)
 

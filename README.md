@@ -9,7 +9,7 @@ Just a playground for testing algorithms and data structures. The code here may 
 - ### Implemented:
     
     - Heap
-    - Stack (not tested)
+    - Stack
     - Non-Blocking Queue (not tested)
     - LRU (not tested)
 
@@ -35,6 +35,7 @@ Just a playground for testing algorithms and data structures. The code here may 
     - Bubble Sort
     - Count Sort
     - Heap Sort
+    - Merge Sort
     
 - ### WIP:
     
@@ -42,7 +43,6 @@ Just a playground for testing algorithms and data structures. The code here may 
     - Block Sort
     - Clover Sort
     - Binary Tree Sort
-    - Merge Sort
     - Insertion Sort
 
 ## Algorithm Problems (will be mainly Leetcode stuffs and interview problems)

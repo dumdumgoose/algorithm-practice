@@ -2,8 +2,9 @@ package structures
 
 import (
 	"errors"
-	"github.com/azraeljack/algorithm-practice/common"
 	"math/big"
+
+	"github.com/azraeljack/algorithm-practice/common"
 )
 
 var (

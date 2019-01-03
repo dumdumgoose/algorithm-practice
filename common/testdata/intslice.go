@@ -3,8 +3,9 @@ package testdata
 import (
 	"errors"
 	"fmt"
-	"github.com/azraeljack/algorithm-practice/common"
 	"math/rand"
+
+	"github.com/azraeljack/algorithm-practice/common"
 )
 
 var (
@@ -49,7 +50,7 @@ func GetAllTestSliceCopies() map[string][]int {
 	return copied
 }
 
-func GetAllResultSliceCopies() map[string][]int {
+func GetAllSortedSliceCopies() map[string][]int {
 	copied := make(map[string][]int, len(sortedSliceMap))
 	for name, slice := range sortedSliceMap {
 		sliceCopy := make([]int, len(slice))
@@ -90,8 +91,8 @@ func RunSortTest(sortFunc func([]int)) error {
 		testData := make([]int, len(slice))
 		copy(testData, slice)
 		sortFunc(testData)
-		if !common.CompareArrays(testData, sortedSliceMap[name]) {
-			return fmt.Errorf("failed to sort the array %s, expected %v, got %v", name, testData, sortedSliceMap[name])
+		if !common.CompareArraysIdentical(testData, sortedSliceMap[name]) {
+			return fmt.Errorf("failed to sort the array %s, expected %v, got %v", name, sortedSliceMap[name], testData)
 		}
 	}
 	return nil

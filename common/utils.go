@@ -8,12 +8,24 @@ func SwapIntArrayElements(data []int, index1, index2 int) {
 	data[index2] = temp
 }
 
-func CompareArrays(array1, array2 []int) bool {
+func CompareArraysIdentical(array1, array2 []int) bool {
 	if len(array1) != len(array2) {
 		return false
 	}
 	for i := 0; i < len(array1); i++ {
 		if array1[i] != array2[i] {
+			return false
+		}
+	}
+	return true
+}
+
+func CompareArraysReversed(array1, array2 []int) bool {
+	if len(array1) != len(array2) {
+		return false
+	}
+	for i := 0; i < len(array1); i++ {
+		if array1[i] != array2[len(array1)-i-1] {
 			return false
 		}
 	}

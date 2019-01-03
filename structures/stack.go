@@ -2,13 +2,15 @@ package structures
 
 import (
 	"errors"
-	"github.com/azraeljack/algorithm-practice/common"
 	"math/big"
+
+	"github.com/azraeljack/algorithm-practice/common"
 )
 
 var (
-	errStackEmpty = errors.New("stack is empty")
-	errStackFull  = errors.New("stack is full")
+	errStackEmpty           = errors.New("stack is empty")
+	errStackFull            = errors.New("stack is full")
+	errStackLimitOutOfBound = errors.New("stack limit must be greater than 0")
 )
 
 // linked list implementation of Stack
@@ -17,12 +19,15 @@ type Stack struct {
 	size, limit *big.Int
 }
 
-func NewStack(limit *big.Int) *Stack {
+func NewStack(limit *big.Int) (*Stack, error) {
+	if limit.Cmp(common.Big0) <= 0 {
+		return nil, errStackLimitOutOfBound
+	}
 	return &Stack{
 		root:  nil,
 		size:  new(big.Int).Set(common.Big0),
 		limit: new(big.Int).Set(limit),
-	}
+	}, nil
 }
 
 func (s *Stack) Empty() bool {

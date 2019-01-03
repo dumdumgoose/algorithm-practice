@@ -25,7 +25,7 @@ func TestMinHeap(t *testing.T) {
 			counter++
 		}
 		expected, _ := testdata.GetSortedSliceCopy(name)
-		if !common.CompareArrays(sortedSlice, expected) {
+		if !common.CompareArraysIdentical(sortedSlice, expected) {
 			t.Errorf("result is not properly sorted, expected: %v, actual: %v", expected, sortedSlice)
 		}
 	}
@@ -50,7 +50,7 @@ func TestMaxHeap(t *testing.T) {
 		}
 		expected, _ := testdata.GetSortedSliceCopy(name)
 		common.ReverseSortIntArray(expected)
-		if !common.CompareArrays(sortedSlice, expected) {
+		if !common.CompareArraysIdentical(sortedSlice, expected) {
 			t.Errorf("result is not properly sorted, expected: %v, actual: %v", expected, sortedSlice)
 		}
 	}

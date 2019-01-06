@@ -1,4 +1,4 @@
-package problems
+package interview
 
 import "github.com/azraeljack/algorithm-practice/common"
 
